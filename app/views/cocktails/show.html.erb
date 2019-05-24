@@ -1,0 +1,19 @@
+
+<div class="card p-5 my-3">
+  <h4>Cocktail: <%= @cocktail.name %>    </h4>
+
+  <% @doses.each do |dose| %>
+      <p><%= dose.ingredient.name %> - <%= dose.description %>
+
+      <%= link_to dose_path,
+          method: :delete,
+          data: { confirm: "Are you sure?" } do %>
+      <i class="far fa-trash-alt"></i>
+      </p>
+     <% end %>
+  <% end %>
+
+</div>
+
+<%= link_to "Return to overview", cocktails_path, class: "btn btn-primary btn-sm my-4" %>
+<%= link_to "Add an dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary btn-sm" %>

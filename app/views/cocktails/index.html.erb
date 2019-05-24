@@ -1,0 +1,24 @@
+<h4 class="divider">
+  <span class="sans">
+   Classic Cocktails
+  </span>
+</h4>
+<div class="container">
+
+ <%= link_to "Add a new Cocktail", new_cocktail_path, class: "btn btn-primary btn-sm my-3 "%>
+
+
+ <% @cocktails.each do |cocktail| %>
+
+  <div class="card-category my-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
+
+    <p> <%= link_to cocktail.name, cocktail_path(cocktail) %></p>
+
+  </div>
+   <% end %>
+</div>
+
+
+
+</div>
+
